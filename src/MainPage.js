@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
 } from 'react-router-dom'
 import Header from './Components/Header'
@@ -17,14 +17,10 @@ class MainPage extends Component {
           <main className="container">
             <section id="content">
               <br></br>
-              <Switch>
-                <Route exact path="/">
-                  <Home />
-                </Route>
-                <Route path="/stocks">
-                  <Stocks />
-                </Route>
-              </Switch>
+              <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route path="/stocks" element={<Stocks />} />
+              </Routes>
             </section>
           </main>
           <footer>

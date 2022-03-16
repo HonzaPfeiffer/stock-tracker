@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Line } from 'react-chartjs-2'
-import { CircleLoading } from 'react-loadingg'
+import ReactLoading from 'react-loading'
 import DataError from './DataError'
 import tokens from '../tokens.json'
 
@@ -150,7 +150,7 @@ class Stock extends Component {
                 </div>
       )
     } else if (this.state.loading) {
-      return <CircleLoading />
+      return <ReactLoading type={'spinningBubbles'} color={'#ffffff'} height={'20%'} width={'20%'} />
     } else {
       let stockName = this.state.stock[1].split(' ')[0]
       stockName = stockName.toLowerCase()
